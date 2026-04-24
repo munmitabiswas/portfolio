@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -12,6 +13,34 @@ export default function Hero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 2.6, type: "spring", stiffness: 100 }}
+            className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-10"
+          >
+            <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse" />
+            <div className="relative w-full h-full rounded-full border-2 border-primary/30 p-1.5 glass">
+              <div className="w-full h-full rounded-full overflow-hidden border border-primary/50 relative">
+                <Image
+                  src="/IMG20251128200014.jpg"
+                  alt="Munmita Biswas"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 3.4, duration: 0.5 }}
+              className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center border-4 border-navy shadow-lg"
+            >
+              <div className="w-2 h-2 bg-navy rounded-full animate-ping" />
+            </motion.div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
